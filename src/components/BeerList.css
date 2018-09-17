@@ -3,22 +3,52 @@
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .beers li {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 10px 5px;
+  padding: 2rem 1rem;
   border-radius: 5px;
   text-decoration: none;
   color: #333333;
+  background: white;
 }
 
 .beers li img {
   height: 300px;
   width: auto;
+  align-self: center;
 }
 
 .beers li {
   text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  display: block;
+  color: white;
+  background: #FF9001;
+  text-decoration: none;
+  transform: translateY(3px);
+  padding: 1rem 1.5rem;
+  margin-top: auto;
+}
+
+.button:hover,
+.button:focus {
+  transform: translateY(0px);
+  transition: all 200ms ease-out;
+}
+
+.star {
+  height: 10%;
+  width: 10%;
+  cursor: pointer;
+  position: absolute;
+  top: -25px;
+  right: -15px;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
+import Logo from '../../logo.svg';
 
 //Styles for Header
 import "./Header.css";
@@ -13,10 +14,12 @@ const Header = (props) => {
         <NavLink exact to="/">Home</NavLink>
       </li>
       <li>
+        <Link to="/" className="logo"><img src={Logo} alt="logo" /></Link>
+      </li>
+      <li>
         <NavLink to="/favourites">Favourites</NavLink>
       </li>
     </ul>
-    <h1>Your One Stop Destination for Beer</h1>
       </div>
   </div>
   );

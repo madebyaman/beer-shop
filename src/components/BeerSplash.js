@@ -11,7 +11,7 @@ class BeerSplash extends React.Component {
         <img src={this.props.imageSrc} alt={this.props.name}/>
         <p>{this.props.tagline}</p>
         <Favourite handleFavourite={this.props.handleFavourite} isFavourite={this.props.isFavourite} />
-        <Link to={`/beer/${this.props.id}`}>View Beer</Link>
+        <Link className="button" to={`/beer/${this.props.id}`}>View Beer</Link>
       </li>
     )
   }

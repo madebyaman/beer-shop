@@ -32,7 +32,9 @@ class Beer extends React.Component {
           </div>
           <div className="info">
             <h1>{this.state.beer.name}</h1>
-            <h3>{this.state.beer.tagline}</h3>
+            <h2>Tagline</h2>
+            <p>{this.state.beer.tagline}</p>
+            <h2>Description</h2>
             <p>{this.state.beer.description}</p>
               <h2>Food Pairings</h2>
               <ul>
