@@ -19,7 +19,7 @@ class Beer extends React.Component {
   }
 
   foodPairing = () => {
-    
+
   }
 
   render() {

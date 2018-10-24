@@ -12,31 +12,25 @@ class App extends Component {
     super(props);
     this.state = {
       beers: [],
-      favourite: [],
-      idCounter: 1
+      favourite: []
     }
   }
 
   componentDidMount() {
-    this.getBeerXTimes(18);
+    this.getBeer();
   };
 
-  getBeerXTimes = (x) => {
-    for (let i = 0; i < x; i++) {
-      axios.get(`https://api.punkapi.com/v2/beers/${this.state.idCounter}`)
-        .then(response => {
-          this.setState({
-            beers: [
-              ...response.data,
-              ...this.state.beers
-            ]
-          })
+  getBeer = () => {
+    axios.get(`https://api.punkapi.com/v2/beers?page=1&per_page=18`)
+      .then(response => {
+        this.setState({
+          beers: [
+            ...response.data,
+            ...this.state.beers
+          ],
         })
-        .catch(err => console.error('Error in fetching data', err))
-      this.setState({
-        idCounter: this.state.idCounter+=1
-       })
-      }
+      })
+      .catch(err => console.error('Error in fetching data', err))
   }
 
 
@@ -60,11 +54,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">     
-          <Route path="/" render={() => <Header />} />
-          <Route exact path="/" render={() => 
-          <BeerList 
-            beers={this.state.beers} 
+        <div className="App">
+          <Route path="/" render={() => <Header favouriteItems={this.state.favourite.length} />} />
+          <Route exact path="/" render={() =>
+          <BeerList
+            beers={this.state.beers}
             handleFavourite={this.handleFavourite}
             favourites={this.state.favourite}
             addMoreBeer={this.addMoreBeer}

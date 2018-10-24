@@ -17,7 +17,7 @@ const Header = (props) => {
         <Link to="/" className="logo"><img src={Logo} alt="logo" /></Link>
       </li>
       <li>
-        <NavLink to="/favourites">Favourites</NavLink>
+        <NavLink to="/favourites">Favourites {`${props.favouriteItems}`}</NavLink>
       </li>
     </ul>
       </div>
